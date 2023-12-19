@@ -23,6 +23,11 @@ public class EmployeeController {
         return ResponseEntity.ok("SignUp Done Successfully");
     }
 
+    @GetMapping("/findbyid/{empId}")
+    public ResponseEntity<Employee> findById(@PathVariable long empId)
+    {
+        return ResponseEntity.ok(employeeServiceImpl.findById(empId));
+    }
     @GetMapping("/findall")
     public ResponseEntity<List<Employee>> findAll(){
         return ResponseEntity.ok(employeeServiceImpl.findAll());

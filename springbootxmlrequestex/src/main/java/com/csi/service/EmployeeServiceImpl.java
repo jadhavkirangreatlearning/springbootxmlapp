@@ -22,4 +22,9 @@ public class EmployeeServiceImpl {
 
         return employeeRepoImpl.findAll();
     }
+
+    public Employee findById(long empId) {
+
+        return employeeRepoImpl.findById(empId).get();
+    }
 }
